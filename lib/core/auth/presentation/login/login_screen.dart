@@ -1,23 +1,34 @@
 import 'package:clinic_ecommerce_mobile/config/themes/app_colors.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import '../../../../config/routers/router.dart';
+import '../../../../config/routers/router_handle.dart';
+import '../../../../utils/ui/shape/login_custom_paint.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Container(
+        body:
+        
+        Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Spacer(),
           Container(
-            width: MediaQuery.of(context).size.width * 0.3,
+            height: MediaQuery.of(context).size.height * 0.3,
+            width: MediaQuery.of(context).size.width,
+            child: CustomPaint(
+              painter: LoginCustomPaint(),
+            ),
+          ),
+          Container(
+            width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height * 0.1,
             child: Image.asset('assets/images/Login_logo.png',
                 width: 30, height: 30),
@@ -89,6 +100,10 @@ class LoginScreen extends StatelessWidget {
                         style: TextStyle(
                           color: AppColors.primary,
                         ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            RouterHandle.goToRegister(context);
+                          },
                       ),
                     ],
                   ),
@@ -103,6 +118,10 @@ class LoginScreen extends StatelessWidget {
                         style: TextStyle(
                           color: AppColors.primary,
                         ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            RouterHandle.goToForgotPassword(context);
+                          },
                       ),
                     ],
                   ),
