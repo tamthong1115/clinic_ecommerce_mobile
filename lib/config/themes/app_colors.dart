@@ -7,7 +7,7 @@ class AppColors {
   static const disabled = Color(0xFFBDBDBD);
   static const error = Color(0xFFD32F2F);
 
-  static const tittleSize = 20.0;
+  static const tittleSize = 24.0;
   static const subtitleSize = 16.0;
   static const bodySize = 14.0;
 }
