@@ -1,32 +1,36 @@
+import 'package:clinic_ecommerce_mobile/config/routers/router.dart';
 import 'package:flutter/material.dart';
 import 'router_config.dart';
 
 class RouterHandle {
-  void navigateToHome(BuildContext context) {
-    Navigator.pushReplacementNamed(context, MyRouterConfig.home);
+  static void navigateToHome(BuildContext context) {
+    AppRouter.router.navigateTo(context, MyRouterConfig.home,
+        replace: true, clearStack: true);
   }
 
-  void navigateToHomeFirst(BuildContext context) {
-    Navigator.pushNamedAndRemoveUntil(context, MyRouterConfig.home, (Route<dynamic> route) => false);
+  static void navigateToHomeFirst(BuildContext context) {
+    AppRouter.router
+        .navigateTo(context, MyRouterConfig.register, replace: true);
   }
 
   static void goToLogin(BuildContext context) {
-    Navigator.pushReplacementNamed(context, MyRouterConfig.login);
+    AppRouter.router
+        .navigateTo(context, MyRouterConfig.login, replace: true, clearStack: true);
   }
 
   static void goToRegister(BuildContext context) {
-    Navigator.pushReplacementNamed(context, MyRouterConfig.register);
+    AppRouter.router
+        .navigateTo(context, MyRouterConfig.register, replace: true);
   }
 
   static void goToForgotPassword(BuildContext context) {
-    Navigator.pushNamed(context, MyRouterConfig.forgotPassword);
+    AppRouter.router.navigateTo(context, MyRouterConfig.forgotPassword);
   }
 
   static void goToProfile(BuildContext context, String userId) {
-    Navigator.pushNamed(
+    AppRouter.router.navigateTo(
       context,
       MyRouterConfig.profile.replaceFirst(':userId', userId),
-      arguments: userId,
     );
   }
 

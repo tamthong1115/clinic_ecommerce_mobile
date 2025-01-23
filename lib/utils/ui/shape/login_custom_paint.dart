@@ -4,7 +4,7 @@ class LoginCustomPaint extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var paint = Paint()
-      ..color = Colors.teal
+      ..color = Colors.teal[300]!
       ..strokeWidth = 15
       ..style = PaintingStyle.fill;
 
