@@ -1,3 +1,4 @@
+import 'package:clinic_ecommerce_mobile/widgets/main_layout.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatefulWidget {
@@ -5,16 +6,17 @@ class ProfilePage extends StatefulWidget {
   const ProfilePage({required Key key, required this.userId}) : super(key: key);
 
   @override
-  _ProfilePageState createState() => _ProfilePageState();
+  State <ProfilePage> createState() => _ProfilePageState();
 }
 
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Center(
-        child: Text('Profile Page'),
-      ),
-    );
+    return
+      Container(
+        child: Center(
+          child: Text('Profile Page'),
+        ),
+      );
   }
 }

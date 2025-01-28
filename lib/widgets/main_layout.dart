@@ -6,24 +6,27 @@ import '../modules/schedule/screens/schedule_page.dart';
 import './bottom_navigation.dart';
 import '../modules/home/screens/home_page.dart';
 
-class MainLayout extends StatefulWidget{
+class MainLayout extends StatefulWidget {
+
+  const MainLayout(
+      {super.key});
+
   @override
-  _MainLayoutState createState() => _MainLayoutState();
+  State<MainLayout> createState() => _MainLayoutState();
 }
 
 class _MainLayoutState extends State<MainLayout> {
   int _currentIndex = 0;
 
-
-  final List<Widget> _children = [
+  final List<Widget> _children = const [
     HomePage(),
     MedicinePage(),
     SchedulePage(),
     CartPage(),
-    // ProfilePage(key: null,),
+    ProfilePage(key: ValueKey(1), userId: '12',),
   ];
 
-  void _onTabTapped(int index) {
+  void _onTapTapped(int index) {
     setState(() {
       _currentIndex = index;
     });
@@ -31,11 +34,12 @@ class _MainLayoutState extends State<MainLayout> {
 
   @override
   Widget build(BuildContext context) {
-      return SafeArea(
-        child: Scaffold(
-          body: _children[_currentIndex],
-          bottomNavigationBar: BottomNavigation(currentIndex: _currentIndex, onTap: _onTabTapped),
-        ),
-      );
+    return SafeArea(
+      child: Scaffold(
+        body:IndexedStack(index: _currentIndex, children: _children),
+        bottomNavigationBar:
+            BottomNavigation(currentIndex: _currentIndex, onTap: _onTapTapped),
+      ),
+    );
   }
 }

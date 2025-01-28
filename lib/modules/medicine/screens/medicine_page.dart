@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
 class MedicinePage extends StatefulWidget {
+  const MedicinePage({super.key});
+
   @override
-  _MedicinePageState createState() => _MedicinePageState();
+  State <MedicinePage> createState() => _MedicinePageState();
 }
 
 class _MedicinePageState extends State<MedicinePage> {
