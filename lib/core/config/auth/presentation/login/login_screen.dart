@@ -1,4 +1,4 @@
-import 'package:clinic_ecommerce_mobile/config/themes/app_colors.dart';
+import 'package:clinic_ecommerce_mobile/core/config/themes/app_colors.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -187,7 +187,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: MediaQuery.of(context).size.width * 0.8,
                     child: ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, '/home');
+                        RouterHandle.navigateToHome(context);
                       },
                       child: Text('Login',
                           style: GoogleFonts.inter(

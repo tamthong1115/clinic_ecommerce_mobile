@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'config/routers/router.dart';
-import 'package:fluro/fluro.dart';
-import './widgets/main_layout.dart';
+
+import 'routes/app_router.dart';
 
 void main() {
   AppRouter.defineRouters();
